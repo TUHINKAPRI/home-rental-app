@@ -1,0 +1,41 @@
+<% layout("layouts/boilerplate.ejs") -%>
+
+<div class="container ">
+  <h3 class="ms-5 my-4">All Listings</h3>
+
+  <div class="container">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+      <%for(let ele of data){ %>
+      <a
+        href="/listing/<%= ele.slug %>"
+        class=""
+        style="margin-bottom: 2rem; border-radius: 1rem"
+      >
+        <div class="card property-card">
+          <img
+            src="http://localhost:4000/uploads/<%= ele.image %>"
+            class="card-img-top"
+            alt="Property Image"
+            style="height: 11rem"
+          />
+          <div class="card-img-overlay d-flex gap-3">
+            <p class="card-text"><small><%= ele.location %></small></p>
+            <p class="card-text"><small><%= ele.country %></small></p>
+          </div>
+          <div class="card-body">
+            <h6 class="mb-1" style="font-size: 14px; font-weight: 600">
+              <%= ele.title %>
+            </h6>
+            <p style="font-size: 12px">
+              <span>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </span>
+              <%= ele.price %> <span>/ night</span>
+            </p>
+          </div>
+        </div>
+      </a>
+      <%}%>
+    </div>
+  </div>
+</div>

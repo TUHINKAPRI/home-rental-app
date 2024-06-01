@@ -1,0 +1,82 @@
+<% layout('layouts/adminBilerplate.ejs') -%>
+
+<main id="main" class="main" style="margin-top: 0px !important">
+  <div class="pagetitle">
+    <h1>All Listings</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Listings</li>
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section dashboard">
+    <div class="row">
+      <h1>All Listings</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%for(let ele of data){ %>
+          <tr>
+            <th scope="row"><%= ele._id %></th>
+            <td><%= ele?.title %></td>
+            <td>
+              <%if(ele.status==="Active"){%>
+
+              <form
+                action="/admin/listings/set-inactive/<%= ele._id %>?_method=put"
+                method="POST"
+              >
+                <button
+                  class="btn"
+                  style="background-color: brown; color: white"
+                >
+                  SetToInActive
+                </button>
+              </form>
+
+              <%}else{ %>
+              <form
+                action="/admin/listings/set-active/<%= ele._id %>?_method=put"
+                method="POST"
+              >
+                <button
+                  class="btn text-white"
+                  id="setToActive"
+                  style="background-color: rgb(112, 112, 187)"
+                >
+                  SetToActive
+                </button>
+              </form>
+              <% } %>
+            </td>
+            <td>
+              <a href="/listing/<%= ele._id %>"> View</a>
+            </td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // const btn=document.querySelector("#setToActive");
+    // btn.addEventListener("click",(e)=>{
+    //   console.log(e)
+    // })
+    // function setToActiveHandler(id) {
+    //   // axios.put(`/admin/listings/${id}`);
+    //   console.log(id)
+    // }
+  </script>
+</main>

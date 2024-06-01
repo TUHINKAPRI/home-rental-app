@@ -1,0 +1,122 @@
+<% layout('layouts/boilerplate.ejs') -%>
+
+<div class="">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Welcome to RealEstate</h1>
+      <p>Find your dream home with us</p>
+      <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+  </div>
+  <div class="container my-5">
+    <h2 class="text-center">Featured Properties</h2>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+      <%for(let ele of data){ %>
+      <a
+        href="/listing/<%= ele.slug %>"
+        class=""
+        style="margin-bottom: 2rem; border-radius: 1rem"
+      >
+        <div class="card property-card">
+          <img
+            src="http://localhost:4000/uploads/<%= ele.image %>"
+            class="card-img-top"
+            alt="Property Image"
+            style="height: 11rem"
+          />
+          <div class="card-img-overlay d-flex gap-3">
+            <p class="card-text"><small><%= ele.location %></small></p>
+            <p class="card-text"><small><%= ele.country %></small></p>
+          </div>
+          <div class="card-body">
+            <h6 class="mb-1"  style="font-size:14px; font-weight: 600;" ><%= ele.title %></h6>
+            <p style="font-size: 12px;  ">
+              <span>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </span>
+              <%= ele.price %> <span>/ night</span>
+            </p>
+          </div>
+        </div>
+      </a>
+      <%}%>
+    </div>
+    <div class="d-flex justify-content-center">
+      <a href="/listings" class="bg-primary text-white rounded py-2 px-4 ">
+        All Listings
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="container my-5">
+    <h2 class="text-center">Featured Properties</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card property-card">
+                <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">Beautiful Family House</h5>
+                    <p class="card-text">$500,000 - 4 Beds, 3 Baths</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card property-card">
+                <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">Modern Apartment</h5>
+                    <p class="card-text">$350,000 - 2 Beds, 2 Baths</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card property-card">
+                <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">Luxury Villa</h5>
+                    <p class="card-text">$1,200,000 - 5 Beds, 4 Baths</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h2 class="text-center">Contact Us</h2>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bg-light py-4 text-center">
+    <p>&copy; 2024 RealEstate. All rights reserved.</p>
+</footer>
+
+ Bootstrap JS and dependencies 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> -->

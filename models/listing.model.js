@@ -9,6 +9,14 @@ const listingSchema = new mongoose.Schema({
     type: String,
     required: [true, "Description is required"],
   },
+  slug:{
+    type:String,
+  },
+  status:{
+    type:String,
+    enum:["Inactive","Active"],
+    default:"Inactive"
+  },
   image: {
     type: String,
     required: [true, "Image is required"],

@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate.ejs') -%>
+
+<body>
+  <div class="container mb-5">
+    <nav aria-label="breadcrumb" class="mt-2">
+      <h3>List</h3>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#"> ListItem </a></li>
+      </ol>
+    </nav>
+    <div class="d-flex flex-column align-items-center">
+      <div>
+        <img
+          src=" http://localhost:4000/uploads/<%= data?.image %>"
+          alt=""
+          style="width: 600px; height: 300px"
+        />
+        <h3 class="mt-5"><%= data?.title %></h3>
+        <div class="d-flex mt-3 gap-4">
+          <h5>price- <%= data?.price %></h5>
+          <p>location- <%= data?.location %></p>
+        </div>
+        <p class="my-3"><%= data?.description %></p>
+        <a
+          href="/listing/edit/<%= data?._id %>"
+          class="bg-primary rounded text-white border px-4 py-2"
+        >
+          Edit
+        </a>
+        <!-- <button class="actionbtn">
+          delete
+        </button> -->
+      </div>
+    </div>
+  </div>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const btn=document.querySelector(".actionbtn");
+    btn.addEventListener("click",()=>{
+     axios.delete()
+    })
+   
+  </script> -->
+</body>

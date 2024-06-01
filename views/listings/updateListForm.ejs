@@ -1,0 +1,91 @@
+<% layout('layouts/boilerplate.ejs') -%>
+
+<div class="container">
+  <nav aria-label="breadcrumb" class="mt-2">
+    <h3>Update List</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#"> update </a></li>
+    </ol>
+  </nav>
+  <div class="d-flex justify-content-center mb-5">
+    <form
+      class=""
+      action="/listings/<%= data?._id %>?_method=put"
+      method="POST"
+      style="width: 500px"
+    >
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input
+          type="text"
+          name="title"
+          value="<%= data?.title %>"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <!-- <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Description</label
+        >
+        <input
+          type="text"
+          name="description"
+          value="<%= data?.description %>"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">price</label>
+        <input
+          type="text"
+          name="price"
+          value="<%= data?.price %>"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">country</label>
+        <input
+          type="text"
+          name="country"
+          value="<%= data?.country %>"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">location</label>
+        <input
+          type="text"
+          name="location"
+          value="<%= data?.location %>"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Image url</label>
+        <input
+          type="text"
+          name="image"
+          value="<%= data?.image %>"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

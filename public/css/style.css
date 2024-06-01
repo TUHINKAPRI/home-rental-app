@@ -1,0 +1,75 @@
+
+body{
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+
+.icon-font {
+  font-size: 2rem;
+  color: #e22121;
+}
+
+.navbar {
+  /* height: 5rem; */
+  background-color: white !important;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+p{
+  margin-bottom: 5px !important;
+}
+
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")  no-repeat center center;
+  background-size:cover;
+  height: 100vh;
+  color: white;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.footer-link{
+  font-size: 2.5rem;
+  text-decoration: none !important;
+  color: #222222;
+}
+
+.list-unstyled{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none !important;
+  gap:1rem
+}
+
+a{
+  text-decoration:none;
+  color:#222222;
+  
+}
+
+a:hover{
+  color:blue
+}
+
+
+.card-img-overlay{
+  opacity: 0;
+}
+
+.card-img-overlay:hover{
+  opacity:1;
+}
+
+.card:hover{
+  opacity: .7;
+}
